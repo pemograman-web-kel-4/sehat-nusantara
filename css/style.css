@@ -1,0 +1,119 @@
+/* Palet terang: utama #0F766E, sekunder #E6F4F1, aksen #C2410C, teks #1F2937 */
+:root{
+  --utama:#0F766E;--utama-gelap:#0B5B55;--sekunder:#E6F4F1;--aksen:#C2410C;--aksen-gelap:#9A3412;--teks:#1F2937;--error:#B42318;--sukses:#198754;
+  /* Variabel tambahan agar mode gelap cukup mengganti nilai di satu tempat */
+  --latar:#fff;--permukaan:#fff;--judul:var(--utama-gelap);--on-utama:#fff;--aksen-teks:var(--aksen);
+  --garis:#d5e3e0;--garis-halus:#cfe5e0;--garis-putus:#b9d3ce;--cincin-fokus:rgba(15,118,110,.25);
+  --info-bg:#FFF7ED;--info-garis:#FDBA74;--footer-bg:var(--utama-gelap);--footer-teks:#E6F4F1;
+  /* Font cadangan: dipakai otomatis jika Google Fonts tidak bisa dimuat (mis. tanpa internet) */
+  --font-isi:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --font-judul:'Nunito','Segoe UI',system-ui,-apple-system,Arial,sans-serif
+}
+/* Mode gelap (bonus): aktif lewat atribut data-bs-theme="dark" pada <html>, diatur tombol pengalih di JS.
+   Memakai mekanisme warna bawaan Bootstrap 5.3 supaya modal, tabel, dan form ikut berubah. */
+[data-bs-theme="dark"]{
+  --utama:#4DD0C4;--sekunder:#183330;--teks:#E6EEED;--error:#FF8A80;--sukses:#4ADE80;
+  --latar:#0E1A19;--permukaan:#142624;--judul:#8FE3D9;--on-utama:#07201D;--aksen-teks:#FB923C;
+  --garis:#2C4744;--garis-halus:#2C4744;--garis-putus:#3B5C58;--cincin-fokus:rgba(77,208,196,.35);
+  --info-bg:#2B2012;--info-garis:#8A5A2B;--footer-bg:#0A2523;
+  --bs-body-bg:var(--latar);--bs-body-color:var(--teks);--bs-border-color:#6A8C87
+}
+body{font-family:var(--font-isi);color:var(--teks);font-size:1rem;line-height:1.6;background:var(--latar)}
+h1,h2,h3,h4,h5{font-family:var(--font-judul);font-weight:800;color:var(--judul)}
+h1{font-size:2.4rem}h2{font-size:1.7rem}h3{font-size:1.25rem}
+a{color:var(--utama)}a:hover{color:var(--aksen-teks)}
+#header-situs{background:var(--latar);border-bottom:3px solid var(--utama)}
+.navbar-brand{font-family:var(--font-judul);font-weight:800;color:var(--judul)!important}
+.navbar-brand img{width:36px;height:36px;margin-right:.5rem}
+.nav-link{color:var(--teks)!important;font-weight:600;border-radius:.5rem;padding:.5rem .9rem!important}
+.nav-link:hover{background:var(--sekunder);color:var(--utama)!important}
+.nav-link.active{background:var(--utama);color:var(--on-utama)!important}
+/* Sistem tombol: semua jenis tombol berbagi ukuran dasar yang sama supaya sejajar dan setinggi.
+   Hierarki: (1) .btn-aksen = aksi utama (terisi), (2) .btn-garis = aksi pendukung (garis tepi), (3) tautan biasa / .card-link = aksi tersier.
+   Aturan posisi: aksi utama selalu pertama (paling kiri di layar lebar, paling atas di ponsel).
+   Tombol di dalam kartu dikunci ke dasar kartu (mt-auto pada kartu flex) dan selebar kartu. */
+.btn-aksen,.btn-garis{--bs-btn-border-width:2px;--bs-btn-padding-y:.6rem;--bs-btn-padding-x:1.3rem;--bs-btn-font-weight:600;--bs-btn-border-radius:.6rem;display:inline-flex;align-items:center;justify-content:center;gap:.45rem}
+/* Status tombol (hover, ditekan, fokus keyboard) diisi lewat variabel bawaan Bootstrap.
+   Tanpa ini, tombol kosong/teks gelap saat ditekan karena variabel --bs-btn-active-* tidak punya nilai. */
+.btn-aksen{--bs-btn-color:#fff;--bs-btn-bg:var(--aksen);--bs-btn-border-color:var(--aksen);--bs-btn-hover-color:#fff;--bs-btn-hover-bg:var(--aksen-gelap);--bs-btn-hover-border-color:var(--aksen-gelap);--bs-btn-active-color:#fff;--bs-btn-active-bg:var(--aksen-gelap);--bs-btn-active-border-color:var(--aksen-gelap);--bs-btn-focus-shadow-rgb:194,65,12}
+.btn-garis{--bs-btn-color:var(--utama);--bs-btn-bg:var(--permukaan);--bs-btn-border-color:var(--utama);--bs-btn-hover-color:var(--on-utama);--bs-btn-hover-bg:var(--utama);--bs-btn-hover-border-color:var(--utama);--bs-btn-active-color:var(--on-utama);--bs-btn-active-bg:var(--utama);--bs-btn-active-border-color:var(--utama);--bs-btn-focus-shadow-rgb:15,118,110}
+[data-bs-theme="dark"] .btn-garis{--bs-btn-focus-shadow-rgb:77,208,196}
+.btn-aksen.btn-sm,.btn-garis.btn-sm{--bs-btn-padding-y:.4rem;--bs-btn-padding-x:.9rem;--bs-btn-font-size:.875rem}
+.btn-aksen:hover,.btn-aksen:focus{background:var(--aksen-gelap);border-color:var(--aksen-gelap);color:#fff}
+.baris-tombol{display:flex;flex-wrap:wrap;gap:.75rem}
+/* Tombol pengalih mode terang/gelap di navbar */
+.btn-tema{width:2.5rem;height:2.5rem;padding:0;display:inline-flex;align-items:center;justify-content:center;border:2px solid var(--utama);border-radius:.6rem;background:var(--permukaan);color:var(--utama);font-size:1.1rem;line-height:1}
+.btn-tema:hover{background:var(--utama);color:var(--on-utama)}
+[data-bs-theme="dark"] .navbar-toggler{border-color:var(--bs-border-color)}
+[data-bs-theme="dark"] .navbar-toggler-icon{filter:invert(1)}
+.hero{background:var(--sekunder);padding:4rem 0;border-bottom:1px solid var(--garis-halus)}
+.hero .sapaan{font-weight:600;color:var(--utama)}
+.hero-ikon{font-size:9rem;color:var(--utama);line-height:1}
+.bagian{padding:3.5rem 0}
+.bagian-warna{background:var(--sekunder)}
+/* Kustomisasi komponen .card Bootstrap agar identitas visual klinik tetap terlihat (Pert. 7).
+   Memakai variabel bawaan Bootstrap, jadi struktur card/card-body/card-title tidak diubah. */
+.card{--bs-card-border-color:var(--garis);--bs-card-border-radius:.9rem;--bs-card-bg:var(--permukaan);--bs-card-height:100%;--bs-card-title-color:var(--judul)}
+.card:hover{border-color:var(--utama)}
+.ikon-poli{width:56px;height:56px;border-radius:.8rem;background:var(--sekunder);color:var(--utama);font-size:1.7rem;display:flex;align-items:center;justify-content:center}
+.avatar{font-size:2.6rem;color:var(--utama)}
+/* Teks bidang dokter bisa 1 atau 2 baris tergantung lebar layar; ruang dua baris dipesan agar tombol di bawahnya selalu sejajar. */
+.bidang-dokter{min-height:3.2em}
+.badge-poli{background:var(--sekunder);color:var(--judul);font-weight:600}
+.jadwal{border-top:1px dashed var(--garis-putus);margin-top:.75rem;padding-top:.75rem}
+.tabel-jadwal{font-size:.92rem}
+.formulir-kelompok{border:1px solid var(--garis);border-radius:.9rem;padding:1.25rem;margin-bottom:1.25rem;background:var(--permukaan)}
+.formulir-kelompok legend{font-family:var(--font-judul);font-weight:800;color:var(--judul);font-size:1.15rem;float:none;width:auto;padding:0 .5rem}
+.form-label{font-weight:600}
+.form-control:focus,.form-select:focus,.form-check-input:focus{border-color:var(--utama);box-shadow:0 0 0 .2rem var(--cincin-fokus)}
+.pesan-error{color:var(--error);font-size:.875rem;min-height:1.2rem}
+.is-invalid{border-color:var(--error)!important}
+.is-valid{border-color:var(--sukses,#198754)!important}
+.hitung-keluhan.melebihi{color:var(--error);font-weight:600}
+/* Modal ringkasan pendaftaran */
+.modal{--bs-modal-bg:var(--permukaan)}
+#nomorAntrean{color:var(--aksen-teks);font-weight:600}
+.w-40{width:40%}
+.catatan-pendaftaran{background:var(--info-bg);border:1px solid var(--info-garis);border-radius:.6rem;padding:.75rem 1rem;font-size:.92rem}
+/* Footer: tiga kolom sama lebar, judul satu baris, dan ritme jarak yang sama agar tampak seimbang */
+#footer-situs{background:var(--footer-bg);color:var(--footer-teks);padding:3rem 0 1.25rem;font-size:.95rem;line-height:1.5}
+#footer-situs a{color:#fff;text-decoration:none}
+#footer-situs a:hover,#footer-situs a:focus-visible{text-decoration:underline}
+#footer-situs h2{color:#fff;font-size:1.1rem;margin-bottom:1rem}
+.daftar-footer li{margin-bottom:.55rem}
+.daftar-footer li:last-child{margin-bottom:0}
+.kontak-footer li{display:flex;align-items:flex-start;gap:.65rem}
+.daftar-footer .bi{flex:0 0 1.1rem;font-size:1.05rem;line-height:1.5;color:var(--footer-teks)}
+#footer-situs .hak-cipta{border-top:1px solid rgba(255,255,255,.25);margin-top:2.5rem;padding-top:1.25rem;font-size:.875rem}
+@media (max-width:991px){.hero-ikon{display:none}h1{font-size:2rem}}
+@media (max-width:576px){h1{font-size:1.65rem}h2{font-size:1.4rem}.hero{padding:2.5rem 0}.bagian{padding:2.25rem 0}.btn-aksen,.btn-garis{width:100%}}
+@media (min-width:1200px){.hero{padding:5.5rem 0}}
+img,svg{max-width:100%}
+/* Tampilan cetak (bonus). Selalu kembali ke warna terang agar hemat tinta, walau halaman sedang mode gelap.
+   Jika modal ringkasan sedang terbuka (body.modal-open), hanya ringkasan pendaftaran yang dicetak. */
+@media print{
+  :root,[data-bs-theme="dark"]{
+    color-scheme:light;
+    --utama:#0F766E;--sekunder:#fff;--teks:#000;--error:#B42318;--latar:#fff;--permukaan:#fff;--judul:#000;--on-utama:#fff;--aksen-teks:#000;
+    --garis:#999;--garis-halus:#999;--garis-putus:#999;--info-bg:#fff;--info-garis:#999;
+    --bs-body-bg:#fff;--bs-body-color:#000;--bs-border-color:#999
+  }
+  body{font-size:12pt;line-height:1.4}
+  #tombolTema,.navbar-toggler,.btn,.hero-ikon{display:none!important}
+  a{color:#000;text-decoration:underline}
+  #header-situs,#footer-situs{background:#fff;color:#000;border:0}
+  #footer-situs a,#footer-situs h2{color:#000}
+  .hero,.bagian-warna{background:#fff;border:0}
+  .card,.formulir-kelompok{break-inside:avoid}
+  body.modal-open #header-situs,body.modal-open #footer-situs,body.modal-open main > section,body.modal-open .modal-backdrop,
+  body.modal-open .modal-header .btn-close,body.modal-open .modal-footer{display:none!important}
+  body.modal-open .modal{position:static!important;display:block!important;overflow:visible!important;height:auto!important}
+  body.modal-open .modal-dialog{max-width:100%;margin:0;transform:none!important}
+  body.modal-open .modal-dialog-scrollable .modal-content,body.modal-open .modal-dialog-scrollable .modal-body{max-height:none;overflow:visible}
+  body.modal-open .modal-content{border:0}
+  .modal-title::after{content:" - Klinik Pratama Sehat Nusantara";font-size:.6em;font-weight:400}
+}
+
+/* Skip link: muncul hanya saat difokuskan dengan keyboard (Tab) */
+.skip-link:focus{position:fixed;top:.5rem;left:.5rem;z-index:2000;padding:.5rem 1rem;border-radius:.5rem;background:var(--utama);color:var(--on-utama)!important;font-weight:600}
+#konten-utama:focus{outline:none}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>/* Pasang tema tersimpan (atau preferensi sistem) sebelum halaman digambar, agar tidak berkedip. */
+    try{var t=localStorage.getItem("tema");if(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)t="dark";if(t==="dark"||t==="light")document.documentElement.setAttribute("data-bs-theme",t)}catch(e){}
+  </script>
+  <title>Beranda | Klinik Pratama Sehat Nusantara</title>
+  <meta name="description" content="Klinik Pratama Sehat Nusantara di Kota Kediri: lihat layanan poliklinik, jadwal dokter, dan daftar berobat secara online tanpa antre sejak pagi.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:title" content="Beranda | Klinik Pratama Sehat Nusantara">
+  <meta property="og:description" content="Klinik Pratama Sehat Nusantara di Kota Kediri: lihat layanan poliklinik, jadwal dokter, dan daftar berobat secara online tanpa antre sejak pagi.">
+  <!-- Bootstrap 5.3.3 dan Bootstrap Icons 1.11.3 lewat CDN (versi dikunci). Atribut integrity memastikan berkas
+       tidak berubah di jalan; browser menolak berkas yang hash-nya tidak cocok. -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" integrity="sha384-XGjxtQfXaH2tnPFa9x+ruJTuLE3Aa6LhHSWRr1XeTyhezb4abCG4ccI5AkVDxqC+" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Nunito:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="visually-hidden-focusable skip-link" href="#konten-utama">Lewati ke konten utama</a>
+<header id="header-situs">
+  <nav class="navbar navbar-expand-lg" aria-label="Navigasi utama">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html"><img src="img/logo.svg" alt="Logo Klinik Sehat Nusantara">Sehat Nusantara</a>
+      <button type="button" class="btn-tema ms-auto ms-lg-2 me-2 me-lg-0 order-lg-last" id="tombolTema" aria-label="Mode gelap" aria-pressed="false" title="Ganti mode terang/gelap"><i class="bi bi-moon-stars-fill" aria-hidden="true"></i></button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuUtama" aria-controls="menuUtama" aria-expanded="false" aria-label="Buka menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuUtama">
+        <ul class="navbar-nav ms-auto gap-lg-1">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="layanan.html">Layanan</a></li>
+          <li class="nav-item"><a class="nav-link" href="dokter.html">Dokter</a></li>
+          <li class="nav-item"><a class="nav-link" href="pendaftaran.html">Pendaftaran</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main id="konten-utama" tabindex="-1">
+<section class="hero" aria-labelledby="judul-hero">
+  <div class="container"><div class="row align-items-center">
+    <div class="col-lg-7">
+      <p class="sapaan mb-2" id="sapaan">Selamat datang di Klinik Sehat Nusantara.</p>
+      <h1 id="judul-hero">Daftar berobat dari rumah, tanpa antre sejak pagi.</h1>
+      <p class="fs-5">Lihat layanan, cek jadwal dokter, lalu isi formulir pendaftaran dengan data yang sudah diperiksa otomatis.</p>
+      <div class="baris-tombol">
+        <a href="pendaftaran.html" class="btn btn-aksen">Daftar sekarang</a>
+        <a href="dokter.html" class="btn btn-garis">Lihat jadwal dokter</a>
+      </div>
+    </div>
+    <div class="col-lg-5 text-center"><i class="bi bi-hospital hero-ikon" aria-hidden="true"></i></div>
+  </div></div>
+</section>
+<section class="bagian" aria-labelledby="judul-tentang">
+  <div class="container">
+    <h2 id="judul-tentang">Tentang klinik</h2>
+    <p class="col-lg-8 px-0">Klinik Pratama Sehat Nusantara adalah klinik rawat jalan di Kota Kediri dengan empat poliklinik: Umum, Gigi, Kesehatan Ibu dan Anak (KIA), dan Gizi. Melalui situs ini, pasien dapat melihat layanan, memeriksa jadwal praktik dokter, dan mendaftar secara online sebelum datang ke klinik.</p>
+  </div>
+</section>
+<section class="bagian bagian-warna" aria-labelledby="judul-poli">
+  <div class="container">
+    <h2 id="judul-poli" class="mb-4">Empat poliklinik kami</h2>
+    <div class="row g-3">
+      <div class="col-sm-6 col-lg-3"><article class="card"><div class="card-body d-flex flex-column">
+        <div class="ikon-poli mb-2"><i class="bi bi-heart-pulse" aria-hidden="true"></i></div>
+        <h3 class="card-title">Poliklinik Umum</h3><p class="card-text mb-2">Pemeriksaan dan penanganan keluhan kesehatan sehari-hari untuk semua usia.</p>
+        <a href="pendaftaran.html?poli=UMUM" class="card-link mt-auto align-self-start">Daftar ke poli ini</a>
+      </div></article></div>
+      <div class="col-sm-6 col-lg-3"><article class="card"><div class="card-body d-flex flex-column">
+        <div class="ikon-poli mb-2"><i class="bi bi-emoji-smile" aria-hidden="true"></i></div>
+        <h3 class="card-title">Poliklinik Gigi</h3><p class="card-text mb-2">Perawatan kesehatan gigi dan mulut untuk anak hingga dewasa.</p>
+        <a href="pendaftaran.html?poli=GIGI" class="card-link mt-auto align-self-start">Daftar ke poli ini</a>
+      </div></article></div>
+      <div class="col-sm-6 col-lg-3"><article class="card"><div class="card-body d-flex flex-column">
+        <div class="ikon-poli mb-2"><i class="bi bi-people" aria-hidden="true"></i></div>
+        <h3 class="card-title">Poliklinik KIA</h3><p class="card-text mb-2">Pelayanan kesehatan ibu hamil, ibu menyusui, bayi, dan anak.</p>
+        <a href="pendaftaran.html?poli=KIA" class="card-link mt-auto align-self-start">Daftar ke poli ini</a>
+      </div></article></div>
+      <div class="col-sm-6 col-lg-3"><article class="card"><div class="card-body d-flex flex-column">
+        <div class="ikon-poli mb-2"><i class="bi bi-egg-fried" aria-hidden="true"></i></div>
+        <h3 class="card-title">Poliklinik Gizi</h3><p class="card-text mb-2">Konsultasi pola makan dan status gizi sesuai kebutuhan Anda.</p>
+        <a href="pendaftaran.html?poli=GIZI" class="card-link mt-auto align-self-start">Daftar ke poli ini</a>
+      </div></article></div>
+    </div>
+    <p class="mt-3 mb-0"><a href="layanan.html">Lihat detail semua layanan</a></p>
+  </div>
+</section>
+<section class="bagian" aria-labelledby="judul-unggul">
+  <div class="container">
+    <h2 id="judul-unggul" class="mb-4">Mengapa mendaftar online</h2>
+    <div class="row g-3">
+      <div class="col-md-4"><div class="card"><div class="card-body"><h3 class="card-title"><i class="bi bi-clock-history" aria-hidden="true"></i> Lebih singkat</h3><p class="card-text">Isi formulir dari rumah agar ruang tunggu tidak penuh.</p></div></div></div>
+      <div class="col-md-4"><div class="card"><div class="card-body"><h3 class="card-title"><i class="bi bi-calendar-check" aria-hidden="true"></i> Jadwal jelas</h3><p class="card-text">Cek hari dan jam praktik dokter sebelum berangkat.</p></div></div></div>
+      <div class="col-md-4"><div class="card"><div class="card-body"><h3 class="card-title"><i class="bi bi-shield-check" aria-hidden="true"></i> Data lebih rapi</h3><p class="card-text">NIK dan nomor HP diperiksa langsung saat Anda mengetik.</p></div></div></div>
+    </div>
+  </div>
+</section>
+<section class="bagian bagian-warna" aria-labelledby="judul-hariini">
+  <div class="container">
+    <h2 id="judul-hariini">Dokter praktik hari <span id="labelHari"></span></h2>
+    <ul class="list-group mb-3" id="dokterHariIni"></ul>
+    <a href="dokter.html">Lihat semua dokter dan jadwalnya</a>
+  </div>
+</section>
+<section class="bagian text-center" aria-labelledby="judul-cta">
+  <div class="container">
+    <h2 id="judul-cta">Siap mendaftar?</h2>
+    <p>Pilih poliklinik, dokter, dan tanggal kunjungan dalam satu formulir.</p>
+    <a href="pendaftaran.html" class="btn btn-aksen">Isi formulir pendaftaran</a>
+  </div>
+</section>
+</main>
+<footer id="footer-situs">
+  <div class="container">
+    <div class="row g-4 g-lg-5 justify-content-md-evenly">
+      <div class="col-12 col-md-auto">
+        <h2 class="h5">Kontak</h2>
+        <address class="mb-0">
+          <ul class="list-unstyled mb-0 daftar-footer kontak-footer">
+            <li><i class="bi bi-geo-alt" aria-hidden="true"></i><span>Kota Kediri, Jawa Timur</span></li>
+            <li><i class="bi bi-telephone" aria-hidden="true"></i><span>(0354) 555-0100</span></li>
+            <li><i class="bi bi-envelope" aria-hidden="true"></i><span>info@sehatnusantara.id</span></li>
+          </ul>
+        </address>
+      </div>
+      <nav class="col-6 col-md-auto" aria-label="Poliklinik">
+        <h2 class="h5">Poliklinik</h2>
+        <ul class="list-unstyled mb-0 daftar-footer">
+          <li><a href="layanan.html#poli-umum">Poliklinik Umum</a></li>
+          <li><a href="layanan.html#poli-gigi">Poliklinik Gigi</a></li>
+          <li><a href="layanan.html#poli-kia">Poliklinik KIA</a></li>
+          <li><a href="layanan.html#poli-gizi">Poliklinik Gizi</a></li>
+        </ul>
+      </nav>
+      <div class="col-6 col-md-auto">
+        <h2 class="h5">Jam layanan</h2>
+        <ul class="list-unstyled mb-0 daftar-footer">
+          <li>Senin - Sabtu<br>08.00 - 18.00 WIB</li>
+          <li>Minggu: tutup</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hak-cipta d-flex flex-wrap align-items-center justify-content-center text-center column-gap-4 row-gap-1">
+      <p class="mb-0">&copy; 2026 Klinik Pratama Sehat Nusantara. Hak cipta dilindungi.</p>
+      <a href="#header-situs">Kembali ke atas</a>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
